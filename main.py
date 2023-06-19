@@ -34,11 +34,11 @@ try:
         current_temp = get_temperature_fahrenheit()
         print("Current temperature: {:.2f}°F".format(current_temp))
 
-        if current_temp <= (temp_threshold - tolerance) and relay_state == GPIO.LOW:
+        if current_temp >= (temp_threshold + tolerance) and relay_state == GPIO.LOW:
             # Switch the relay on
             relay_state = GPIO.HIGH
             GPIO.output(relay_pin, relay_state)
-        elif current_temp >= (temp_threshold + tolerance) and relay_state == GPIO.HIGH:
+        elif current_temp <= (temp_threshold - tolerance) and relay_state == GPIO.HIGH:
             # Switch the relay off
             relay_state = GPIO.LOW
             GPIO.output(relay_pin, relay_state)
