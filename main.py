@@ -6,7 +6,7 @@ import time
 relay_pin = 18
 
 # Temperature threshold (in Fahrenheit)
-temp_threshold = 75.0  # adjust this value to your needs
+temp_threshold = 60.0  # adjust this value to your needs
 tolerance = 2.0  # temperature tolerance
 
 # Use the Broadcom SOC channel, these are the GPIO pin numbers on the Broadcom SOC
