@@ -32,6 +32,7 @@ try:
     # Main program loop
     while True:
         current_temp = get_temperature_fahrenheit()
+        print("Current temperature: {:.2f}°F".format(current_temp))
 
         if current_temp <= (temp_threshold - tolerance) and relay_state == GPIO.LOW:
             # Switch the relay on
@@ -43,7 +44,7 @@ try:
             GPIO.output(relay_pin, relay_state)
 
         # Wait a bit before the next reading
-        time.sleep(1)
+        time.sleep(30)
 
 # Clean up on exit
 except KeyboardInterrupt:
