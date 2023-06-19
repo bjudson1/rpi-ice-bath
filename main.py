@@ -38,10 +38,12 @@ try:
             # Switch the relay on
             relay_state = GPIO.HIGH
             GPIO.output(relay_pin, relay_state)
+            print("Switching relay on")
         elif current_temp <= (temp_threshold - tolerance) and relay_state == GPIO.HIGH:
             # Switch the relay off
             relay_state = GPIO.LOW
             GPIO.output(relay_pin, relay_state)
+            print("Switching relay off")
 
         # Wait a bit before the next reading
         time.sleep(30)
